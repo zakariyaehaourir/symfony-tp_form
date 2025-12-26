@@ -10,6 +10,10 @@ class CartController extends AbstractController
 {
     #[Route('/cart')]
     public function index():Response{
-        return $this->render('cart/index.html.twig' , ['form'=>$this->createForm(AddToCartType::class)]);
+        $form = $this->createForm(AddToCartType::class);
+        if($form->isSubmitted()){
+            dd($form->getData());
+        }
+        return $this->render('cart/index.html.twig' , ['form'=>$form]);
     }
 }

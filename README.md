@@ -4,7 +4,7 @@
 The goal is to transform a standard HTML form into a **Symfony Form** and customize its rendering using a **Twig theme**.  
 We use **Bootstrap 5** for styling and created a **reusable theme** for the form fields.
 
-![Form Placeholder](public/images_md/Screenshot 2025-12-26 204751.png)
+![Form](public/images_md/form.png)
 ---
 
 ## Steps Completed
@@ -70,7 +70,7 @@ widget_attributes represente all attributs declared in each formtype to ensure c
 ```
 After removing the attributs min & max with inspect to remove html constraints
 
-![Form Placeholder](public/images_md/Screenshot 2025-12-26 204613.png)
+![Errors](public/images_md/errors.png)
 
 ### 5. Applying the Theme in the Main View
 1. In `templates/cart/index.html.twig`

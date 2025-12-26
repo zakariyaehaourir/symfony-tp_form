@@ -1,0 +1,30 @@
+{% block integer_widget %}
+    <input type="number" {{ block('widget_attributes') }} class="form-control" style="max-width: 100px;" />
+
+{% endblock %}
+
+{% block form_label %}
+    <label for="{{ id}}" {{ required ? 'required' : ''}} class="form-label  d-flex"> {{ label }}</label>
+{% endblock form_label %}
+
+{% block choice_widget %}
+    <select {{ block('widget_attributes') }} class="form-select" style="max-width: 200px;">
+        {% for choice in choices %}
+            <option value="{{ choice.value }}" >
+                {{ choice.label }}
+            </option>
+        {% endfor %}
+    </select>
+{% endblock %}
+
+{% block form_info %}
+    <span class="form-text text-muted"> {{info}} </span>
+{% endblock form_info %}
+
+{% block form_errors %}
+    <div class="invalid-feedback d-block">
+        {% for error in errors %}
+            {{ error.message }}
+        {% endfor %}
+    </div>
+{% endblock form_errors %}

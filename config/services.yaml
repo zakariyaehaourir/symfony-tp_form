@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            string $from: 'default@ehei.ac'
+    App\:
+        resource: '../src/'
+
+    mailer.newsletter.service:
+        class: App\Service\Mailer\Mail
+        arguments:
+            $from: 'newsletter@ehei.ac'
+        public: true
+
+    mailer.register.service:
+        class: App\Service\Mailer\Mail
+        arguments:
+            $from: 'welcome@ehei.ac'
+        public: true
+
+    mailer.alert.service:
+        class: App\Service\Mailer\Mail
+        arguments:
+            $from: 'alert@ehei.ac'
+        public: true
